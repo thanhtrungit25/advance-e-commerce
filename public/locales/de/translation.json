@@ -1,3 +1,30 @@
 {
-  "hello": "hallo"
+  "header": {
+    "cart": "Warenkorb",
+    "searchBy": "Suchen nac",
+    "login": "Einloggen",
+    "logout": "Admelden"
+  },
+   "footer": {
+    "about": "Über uns",
+    "aboutUs": "Über uns",
+    "ourBranches": "Unsere Filialen",
+    "changelog": "Änderungsprotokoll",
+    "quickLinks": "Schnellzugriff",
+    "faqs": "Häufige Fragen",
+    "recipes": "Rezepte",
+    "contactUs": "Kontakt",
+    "helpSupport": "Hilfe & Support",
+    "termsOfService": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutzerklärung",
+    "security": "Sicherheit",
+    "company": "Unternehmen",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "social": "Soziale",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "copyright": "Alle Rechte vorbehalten © {{year}} {{company}}"
+  }
 }
