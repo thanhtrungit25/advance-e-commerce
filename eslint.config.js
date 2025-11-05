@@ -7,10 +7,16 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
+import featureSliced from "@conarti/eslint-plugin-feature-sliced";
+import importPlugin from "eslint-plugin-import";
 
 export default defineConfig([
   globalIgnores(["dist"]),
   {
+    plugins: {
+      "@conarti/feature-sliced": featureSliced,
+      import: importPlugin,
+    },
     files: ["**/*.{ts,tsx}"],
     extends: [
       js.configs.recommended,
@@ -23,6 +29,62 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
+      ...featureSliced.configs.recommended.rules,
+      "import/order": [
+        "error",
+        {
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+          ],
+          pathGroups: [
+            {
+              pattern: "@/app/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "@/pages/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "@/widgets/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "@/features/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "@/entities/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "@/shared/**",
+              group: "internal",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["builtin"],
+          "newlines-between": "always",
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+        },
+      ],
+
+      "import/first": "error",
+      "import/newline-after-import": "error",
+      "import/no-duplicates": "error",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
@@ -31,4 +93,5 @@ export default defineConfig([
       ],
     },
   },
+  storybook.configs["flat/recommended"]
 ]);

@@ -1,5 +1,8 @@
+import {
+  type SupportLngsType,
+  languageIconList,
+} from "./i18n/LanguageIconList";
 import { routePaths, AppRoutes } from "./router/routePaths";
-
 import {
   Theme,
   ThemeContext,
@@ -8,10 +11,6 @@ import {
 } from "./theme/ThemeConfig";
 import { useTheme } from "./theme/useTheme";
 
-import {
-  type SupportLngsType,
-  languageIconList,
-} from "./i18n/LanguageIconList";
 
 export {
   routePaths,
