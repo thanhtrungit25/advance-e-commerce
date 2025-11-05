@@ -9,7 +9,7 @@
     "lint:ts": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:scss": "stylelint **/*.scss",
+    "lint:scss": "stylelint **/*.scss --fix",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:regression": "npx chromatic",
